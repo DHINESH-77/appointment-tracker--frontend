@@ -5,7 +5,7 @@ import axios from "axios";
 export const createDiaryEntry = createAsyncThunk(
     "diary/createEntry",
     async (payload) => {
-        const res = await axios.post("http://localhost:5000/diary", payload);
+        const res = await axios.post("https://appointment-tracker-backend-cq46.onrender.com/diary", payload);
         return res.data;
     }
 );
@@ -13,7 +13,7 @@ export const createDiaryEntry = createAsyncThunk(
 export const fetchDiaryEntries = createAsyncThunk(
     "diary/fetchEntries",
     async () => {
-        const res = await axios.get("http://localhost:5000/diary");
+        const res = await axios.get("https://appointment-tracker-backend-cq46.onrender.com/diary");
         return res.data;
     }
 );
@@ -21,7 +21,7 @@ export const fetchDiaryEntries = createAsyncThunk(
 export const updateDiaryEntry = createAsyncThunk(
     "diary/updateEntry",
     async ({ id, data }) => {
-        const res = await axios.put(`http://localhost:5000/diary/${id}`, data);
+        const res = await axios.put(`https://appointment-tracker-backend-cq46.onrender.com/diary/${id}`, data);
         return res.data;
     }
 );
@@ -29,7 +29,7 @@ export const updateDiaryEntry = createAsyncThunk(
 export const deleteDiaryEntry = createAsyncThunk(
     "diary/deleteEntry",
     async (id) => {
-        await axios.delete(`http://localhost:5000/diary/${id}`);
+        await axios.delete(`https://appointment-tracker-backend-cq46.onrender.com/diary/${id}`);
         return id;
     }
 );
@@ -37,7 +37,7 @@ export const deleteDiaryEntry = createAsyncThunk(
 export const searchDiaryEntries = createAsyncThunk(
     "diary/searchEntries",
     async (query) => {
-        const res = await axios.get(`http://localhost:5000/diary/search?q=${query}`);
+        const res = await axios.get(`https://appointment-tracker-backend-cq46.onrender.com/diary/search?q=${query}`);
         return res.data;
     }
 );
@@ -45,7 +45,7 @@ export const searchDiaryEntries = createAsyncThunk(
 export const filterEntriesByMood = createAsyncThunk(
     "diary/filterByMood",
     async (mood) => {
-        const res = await axios.get(`http://localhost:5000/diary/filter/mood?mood=${mood}`);
+        const res = await axios.get(`https://appointment-tracker-backend-cq46.onrender.com/diary/filter/mood?mood=${mood}`);
         return res.data;
     }
 );
@@ -53,7 +53,7 @@ export const filterEntriesByMood = createAsyncThunk(
 export const filterEntriesByDateRange = createAsyncThunk(
     "diary/filterByDateRange",
     async ({ startDate, endDate }) => {
-        const res = await axios.get(`http://localhost:5000/diary/filter/date?startDate=${startDate}&endDate=${endDate}`);
+        const res = await axios.get(`https://appointment-tracker-backend-cq46.onrender.com/diary/filter/date?startDate=${startDate}&endDate=${endDate}`);
         return res.data;
     }
 );
@@ -61,7 +61,7 @@ export const filterEntriesByDateRange = createAsyncThunk(
 export const getEntriesOnThisDay = createAsyncThunk(
     "diary/getOnThisDay",
     async () => {
-        const res = await axios.get("http://localhost:5000/diary/onthisday");
+        const res = await axios.get("https://appointment-tracker-backend-cq46.onrender.com/diary/onthisday");
         return res.data;
     }
 );

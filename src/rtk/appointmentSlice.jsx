@@ -4,14 +4,14 @@ import axios from "axios"
 
 export const postapp=createAsyncThunk(
    "appointment/addappointment",async(payload)=>{
-      const res=await axios.post("http://localhost:5000/app",payload);
+      const res=await axios.post("https://appointment-tracker-backend-cq46.onrender.com/app",payload);
       return res.data
    }
 )
 export const fetchapp=createAsyncThunk(
    "appointment/getappointment",
    async()=>{
-      const res=await axios.get("http://localhost:5000/app");
+      const res=await axios.get("https://appointment-tracker-backend-cq46.onrender.com/app");
       return res.data;
    }
 )
@@ -19,7 +19,7 @@ export const fetchapp=createAsyncThunk(
 export const deletebyid=createAsyncThunk(
    "appointment/deleteapointment",
    async(id)=>{
-   await axios.delete(`http://localhost:5000/app/${id}`)
+   await axios.delete(`https://appointment-tracker-backend-cq46.onrender.com/app/${id}`)
    return {id}
    }
 )

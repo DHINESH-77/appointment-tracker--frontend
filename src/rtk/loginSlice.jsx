@@ -2,7 +2,7 @@ import { createSlice,createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios"
 export const loginuser=createAsyncThunk(
     "login/uselogin",async(payload)=>{
-      const res=  await axios.post("https://appointment-tracker-backend-cq46.onrender.com/login",payload,{withCredentials:true})
+      const res=  await axios.post("https://appointment-tracker-backend-3.onrender.com/login",payload,{withCredentials:true})
        return res.data;
     }
 )

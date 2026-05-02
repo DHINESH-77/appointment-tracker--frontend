@@ -4,22 +4,23 @@ import axios from "axios"
 
 export const postapp=createAsyncThunk(
    "appointment/addappointment",async(payload)=>{
-      const res=await axios.post("https://appointment-tracker-backend-cq46.onrender.com/app",payload);
+      const res=await axios.post("https://appointment-tracker-backend-3.onrender.com/app",payload);
       return res.data
    }
 )
 export const fetchapp=createAsyncThunk(
    "appointment/getappointment",
    async()=>{
-      const res=await axios.get("https://appointment-tracker-backend-cq46.onrender.com/app");
+      const res=await axios.get("https://appointment-tracker-backend-3.onrender.com/app");
       return res.data;
    }
 )
 
+
 export const deletebyid=createAsyncThunk(
    "appointment/deleteapointment",
    async(id)=>{
-   await axios.delete(`https://appointment-tracker-backend-cq46.onrender.com/app/${id}`)
+   await axios.delete(`https://appointment-tracker-backend-3.onrender.com/app/${id}`)
    return {id}
    }
 )
